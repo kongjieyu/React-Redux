@@ -26,8 +26,12 @@
                 age: '18'
             }
             //define the function, take the event object
-            handleClick(e) {
-                console.log(e.target)
+            handleClick = (e) => {
+                //console.log(e.target)
+                //'this' keyword is not able to apply inside the function. such as console.log(this.state.name)
+                this.setState({
+                    name: 'Eric'
+                })
             }
             onMouseOver(e) {
                 console.log(e.pageX)
