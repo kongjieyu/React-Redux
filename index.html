@@ -25,20 +25,36 @@
                 name: 'May',
                 age: '18'
             }
+            //define the function, take the event object
+            handleClick(e) {
+                console.log(e.target)
+            }
+            onMouseOver(e) {
+                console.log(e.pageX)
+            }
+            handleCopy() {
+                console.log('Try being original for once!')
+            }
+            //the code need to be rendered
+            //render the template to somewhere(document.getElementById)
             render() {
                 return(
                     //root element --- <div></div>
                     //we can't use class keyword in Javascript, alternatively, we need to use className
                     //we can out put dynamic content into {}
-                    //this refers to component itself
+                    //this refers to component itself, so if we want to call the state, call the function of this component, we need to use this
                     <div className = "app-content">
                         <h1>Hey May</h1>
                         <p>My name is: { this.state.name } and I am { this.state.age } years old</p>
+                        <button onClick = { this. handleClick } > Click me </button>
+                        <button onMouseOver = { this. onMouseOver } > Hover me </button>
+                        <p onCopy={ this.handleCopy }>copy this </p>
                     </div>
                 )
             }
         }
         //we need to render the JS code to DOM
+        //the first element is which component we want to render to the DOM (it can be the class )
         ReactDOM.render(<App />, document.getElementById('app'));
     </script>
 </body>
