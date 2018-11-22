@@ -20,14 +20,20 @@
         //representative the component
         //the idea of React is that we can output dynamic content
         class App extends React.Component {
+            //define the state of the component
+            state = {
+                name: 'May',
+                age: '18'
+            }
             render() {
                 return(
                     //root element --- <div></div>
                     //we can't use class keyword in Javascript, alternatively, we need to use className
                     //we can out put dynamic content into {}
+                    //this refers to component itself
                     <div className = "app-content">
                         <h1>Hey May</h1>
-                        <p>{ Math.random()*10 }</p>
+                        <p>My name is: { this.state.name } and I am { this.state.age } years old</p>
                     </div>
                 )
             }
